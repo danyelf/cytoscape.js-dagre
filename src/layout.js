@@ -1,12 +1,12 @@
+import defaults from './defaults';
+import dagre from 'dagre';
+
 const isFunction = function(o){ return typeof o === 'function'; };
-const defaults = require('./defaults');
-const assign = require('./assign');
-const dagre = require('dagre');
 
 // constructor
 // options : object containing layout options
 function DagreLayout( options ){
-  this.options = assign( {}, defaults, options );
+  this.options = { ... defaults, ... options } 
 }
 
 // runs the layout
